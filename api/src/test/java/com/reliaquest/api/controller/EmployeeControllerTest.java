@@ -120,7 +120,6 @@ public class EmployeeControllerTest {
                 .expectBody(new ParameterizedTypeReference<List<String>>() {})
                 .consumeWith(response -> {
                     List<String> body = response.getResponseBody();
-                    System.out.println("Actual Response: " + body); // Debug print
                     assertNotNull(body);
                     assertEquals(3, body.size(), "Expected list size does not match");
                     assertEquals(List.of("name1", "name2", "name3"), body, "Expected employee names do not match");
